@@ -1,0 +1,26 @@
+Algorithm:
+1. Define variable
+2. Read the no fo data n.
+3. Read the data x and y as
+for i=0 to n
+   Read ax[i] and ay[i]
+   end for i
+4. Calcualte h=ax[1]-ax[0]
+5. Calculate 1st order differences as
+   for i=0 to n-1
+       diff[i][1]=ay[i+1]-ay[i]
+       end for i
+ 6. Calculte 2nnd and higher order differnce as
+ for j=2 to higher order 
+  for i=0 to n-j
+     diff[i][j]=diff[i+1][j-1] - diff[i][j-1]
+     end for i
+     end for j
+ 7. Calculate p=(x-ax[i]/h)
+              yp=ay[i]
+ 8. calculate interpolation valuse as
+          for k=1 to orders 
+          nu*=p-k-1
+          de*=k
+          yp+=(nu/de)*diff[i][k]
+     print yp as interpolated value.
